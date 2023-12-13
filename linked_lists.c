@@ -3,7 +3,6 @@
 /**
  * print_list - _print linked list
  * @h: linked list
- * 
  * Return: size of linked list
  */
 size_t print_list(list_t *h)
@@ -38,18 +37,16 @@ size_t print_list(list_t *h)
 /**
  * add_end_node - add node to end of linked list
  * @head: pointer to head of linked list
- * @str: data to new nod
- * 
+ * @str: data to new node
  * Return: pointer to new linked list
  */
-
 list_t *add_end_node(list_t **head, char *str)
 {
 	list_t *new;
 	list_t *holder;
 
 	if (head == NULL || str == NULL)
-		return (NULL); 
+		return (NULL); /* check if address of head is null */
 	new = malloc(sizeof(list_t));
 	if (new == NULL)
 		return (NULL);
@@ -77,10 +74,8 @@ list_t *add_end_node(list_t **head, char *str)
  * delete_nodeint_at_index - removing node at index
  * @head: input head address
  * @index: input index
- * 
  * Return: 1 if success, -1 if fail
  */
-
 int delete_nodeint_at_index(list_t **head, int index)
 {
 	list_t *n_head;

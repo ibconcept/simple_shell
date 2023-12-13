@@ -6,7 +6,6 @@
  * to the buffer pointed to by dest
  * @dest: copy source to this buffer
  * @src: this is the source to copy
- * 
  * Return: copy of original source
  */
 

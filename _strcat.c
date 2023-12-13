@@ -4,7 +4,6 @@
  * _strcat - concatenate two strings
  * @dest: string to be appended to
  * @src: string to append
- * 
  * Return: concatenated string
  */
 char *_strcat(char *dest, char *src)
@@ -14,6 +13,7 @@ char *_strcat(char *dest, char *src)
 	int total_len = 0;
 	int j = 0;
 
+	/* find total length of both strings to _realloc */
 	while (dest[len] != '\0')
 	{
 		len++;
@@ -25,6 +25,7 @@ char *_strcat(char *dest, char *src)
 		total_len++;
 	}
 
+	/* _realloc because dest was malloced outside of function */
 	dest = _realloc(dest, len, sizeof(char) * total_len + 1);
 
 	while (src[j] != '\0')

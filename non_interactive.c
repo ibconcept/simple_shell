@@ -4,7 +4,6 @@
  * c_ignore - custom ignores spaces and newlines
  * (e.g. echo "ls\n ls" | ./a.out)
  * @str: envrionmental variables
- * 
  * Return: new string
  */
 char *c_ignore(char *str)
@@ -33,14 +32,14 @@ void non_interactive(list_t *env)
 	}
 	n_command = command;
 	command = c_ignore(command);
-	n_line = _str_tok(command, "\n");
+	n_line = _str_tok(command, "\n"); /* tokenize each command string */
 	if (n_command != NULL)
 		free(n_command);
 	n = 0;
 	while (n_line[n] != NULL)
 	{
 		command_line_no++;
-		token = NULL; 
+		token = NULL; /* tokenize each command in array of commands */
 		token = _str_tok(n_line[n], " ");
 		exit_stat = built_in(token, env, command_line_no, n_line);
 		if (exit_stat)
